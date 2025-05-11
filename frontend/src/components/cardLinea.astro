@@ -1,0 +1,27 @@
+---
+const { titulo, subtitulo, descripcion, fecha, clas, class2 } = Astro.props;
+---
+
+<div
+  class=`relative [@media(max-width:320px)]:w-[320px] w-full md:w-136  flex ${class2}`
+>
+  <div
+    class=`w-[46%] md:w-1/2 border p-1 md:p-5  ${clas}`
+  >
+    <h2 class="text-mutedBlue w-auto border md:w-56 font-bold text-[1.125rem]">
+      {titulo}
+    </h2>
+    <h3
+      class="text-gray-500 w-auto border md:w-58 font-semibold mb-1 text-[0.825rem]"
+    >
+      {subtitulo}
+    </h3>
+    <p class="text-black w-auto border md:w-58 font-mono text-[0.655rem]">
+      {descripcion}
+    </p>
+    <time
+      datetime="2024-08"
+      class="text-warmTone w-auto border md:w-58 font-mono text-sm">{fecha}</time
+    >
+  </div>
+</div>

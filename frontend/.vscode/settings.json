@@ -1,0 +1,10 @@
+{
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#1E256B", // Azul profundo
+        "activityBar.foreground": "#FFD700", // Dorado para los iconos
+        "titleBar.activeBackground": "#2A3496", // Azul intenso
+        "titleBar.activeForeground": "#FBFBFE", // Blanco puro para el texto
+        "titleBar.inactiveBackground": "#202A59", // Azul oscuro para armonía
+        "titleBar.inactiveForeground": "#D7E0F5", // Azul claro para u  "sideBar.background": "#1A1F7", // Azul profundo para enfoque
+    }
+}

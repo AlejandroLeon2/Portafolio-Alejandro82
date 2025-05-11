@@ -1,0 +1,19 @@
+---
+import Boton from "./Boton.astro";
+const { title, description, image, link } = Astro.props;
+---
+
+<div
+  class="group h-120 drop-shadow-xl [@media(max-width:426px)]:w-full hover:drop-shadow-black shadow-lg shadow-black/50 rounded-lg block bg-gray-600 text-white transition hover:scale-105"
+>
+  <img
+    src={image}
+    alt={title}
+    class="w-full h-2/3 overflow-hidden md:object-cover opacity-50 group-hover:opacity-100 transition"
+  />
+  <div class="p-5">
+    <h3 class="text-xl font-bold">{title}</h3>
+    <p class="text-gray-300 text-sm mt-2">{description}</p>
+    <Boton link=`${link}` text="ver" />
+  </div>
+</div>

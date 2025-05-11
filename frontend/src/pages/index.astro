@@ -1,0 +1,64 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Bento from "../components/Bento.astro";
+import Cardhero from "../components/Cardhero.astro";
+import Formulario from "../components/Formulario.astro";
+import LineaT from "../components/LineaT.astro";
+const projects = [
+  {
+    title: "Tetris",
+    description: "Juego Tetris hecho en C++",
+    image: "src/assets/background.svg",
+    link: "#",
+  },
+  {
+    title: "E-commerce",
+    description: "Tienda online con Node.js y PostgreSQL.",
+    image: "src/assets/astro.svg",
+    link: "#",
+  },
+  {
+    title: "Blog Personal",
+    description: "Blog personal hecho con Javascrip y Tailwindcss",
+    image: "src/assets/background.svg",
+    link: "#",
+  },
+  {
+    title: "E-commerce JS",
+    description: "Tienda online con Node.js y PostgreSQL.",
+    image: "src/assets/nice.png",
+    link: "#",
+  },
+  {
+    title: "E-commerce JS",
+    description: "Tienda online con Node.js y PostgreSQL.",
+    image: "src/assets/nice.png",
+    link: "#",
+  },
+];
+---
+
+<Layout>
+  <section
+    class="h-auto pb-10  bg-gradient-to-t  from-neonBlue to-turquesa flex flex-col"
+  >
+    <Cardhero />
+
+  </section>
+  <section
+    class="flex flex-col items-center justify-center border-2 bg-gradient-to-t from-darkBlue via-mutedBlue to-red-900"
+  >
+  <h3 class="text-[3rem] font-semibold text-mutedBlue">Proyectos</h3>
+    <div
+      class="md:max-w-254 w-full flex items-center md:p-2 [@media(max-width:426px)]:flex-col flex-wrap gap-6 p-5 border"
+    >
+      {projects.map((project) => <Bento {...project} />)}
+    </div>
+  </section>
+
+  <section class="flex flex-col justify-center items-center mb-4">
+    <h4 class="font-semibold text-mutedBlue text-[2rem] my-4">Estudios</h4>
+    <LineaT />
+  </section>
+  <Formulario />
+</Layout>

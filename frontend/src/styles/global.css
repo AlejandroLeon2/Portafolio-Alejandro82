@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
+@import "tailwindcss";
+
+.kaus {
+    font-family: "Nabla", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "EDPT" 100,
+        "EHLT" 12;
+}
+
+@theme {
+    --color-darkBlue: #1C2A48;
+    --color-deepGray: #313338;
+    --color-warmTone: #EEA976;
+    --color-naranja: #d35400;
+    --color-mutedBlue: #5B6B97;
+    --color-neonBlue: #40B3CD;
+    --color-neonCyan: #A8ECFB;
+    --color-neonGreen: #9BDDA8;
+    --color-turquesa: #1abc9c;
+    --color-dorado: #f39c12;
+    --color-rojo: #c0392b;
+}
