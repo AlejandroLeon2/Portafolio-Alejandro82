@@ -1,0 +1,10 @@
+---
+const { iconClass, name, ocultar, utiles } = Astro.props;
+---
+
+<div
+  class={`flex items-center ${utiles} h-auto p-2 rounded-md bg-gray-50 hover:bg-white transition-colors`}
+>
+  <i class={`${iconClass} text-gray-600 text-sm mr-2`}></i>
+  <span class={`text-xs md:text-sm text-gray-600 ${ocultar}`}>{name}</span>
+</div>

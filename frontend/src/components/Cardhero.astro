@@ -1,16 +1,22 @@
+---
+import nice from "../assets/nice.png";
+---
+
 <section
-  class="border-2 font-mono  w-full mt-20 flex items-center mx-auto [@media(max-width:768px)]:flex-col-reverse"
+  class="font-mono w-[320px] md:w-[768px] md:justify-around flex items-center [@media(max-width:768px)]:flex-col-reverse z-49"
 >
-  <div class="border w-full max-w-[425px] min-w-[320px]">
-    <div>
-      <h2 class="kaus text-[2.5rem] px-1 text-center">Pedro Alejandro</h2>
-      <h3 class="font-semibold text-[1.8rem] text-left ml-11">
-        Desarollador Web
+  <div class="w-full max-w-[425px] min-w-[320px]">
+    <div class="flex flex-col justify-center items-center">
+      <h2 class="kaus text-[2.5rem] md:text-[3rem] px-1 h-13 md:h-15">
+        Pedro Alejandro
+      </h2>
+      <h3 class="font-semibold text-[1.6rem] md:text-[1.8rem] mb-2">
+        Desarollador Web Jr
       </h3>
     </div>
 
     <section class="flex justify-around">
-      <div class="flex items-center justify-center  w-[120px]">
+      <div class="flex items-center justify-center w-[120px]">
         <a href="#" class=""
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -52,14 +58,10 @@
         >
       </div>
       <button
-        class="bg-gradient-to-r px-2 w-30 text-lg rounded-full from-dorado to-rojo"
-        >CV</button
+        class="bg-gradient-to-r from-dorado to-rojo font-semibold px-4 py-1 w-auto text-lg rounded-2xl active:scale-95 hover:-translate-y-"
+        >Download CV</button
       >
     </section>
   </div>
-  <img
-    src="src/assets/nice.png"
-    alt=""
-    class="rounded-full w-60 border border-white"
-  />
+  <img src={nice.src} alt="" class="rounded-full w-60 lg:w-75 h-full" />
 </section>

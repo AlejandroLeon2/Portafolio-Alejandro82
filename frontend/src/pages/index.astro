@@ -4,61 +4,251 @@ import Bento from "../components/Bento.astro";
 import Cardhero from "../components/Cardhero.astro";
 import Formulario from "../components/Formulario.astro";
 import LineaT from "../components/LineaT.astro";
-const projects = [
+import TecSection from "../components/TecSection.astro";
+import Slider from "../components/Slider.astro";
+import PageSlider from "../components/PageSlider.astro";
+import { projects } from "../utils/proyectos";
+
+const techStack = [
   {
-    title: "Tetris",
-    description: "Juego Tetris hecho en C++",
-    image: "src/assets/background.svg",
-    link: "#",
+    title: "Frontend",
+    iconClass: "fas fa-code text-indigo-500 bg-indigo-50",
+    items: [
+      { iconClass: "fab fa-js", name: "JavaScript" },
+      { iconClass: "fab fa-html5", name: "HTML5" },
+      { iconClass: "fab fa-css3-alt", name: "CSS3" },
+      { iconClass: "fas fa-rocket", name: "Astro" },
+    ],
   },
   {
-    title: "E-commerce",
-    description: "Tienda online con Node.js y PostgreSQL.",
-    image: "src/assets/astro.svg",
-    link: "#",
+    title: "Backend",
+    iconClass: "fas fa-server text-green-500 bg-green-50",
+    items: [
+      { iconClass: "fab fa-node", name: "Node.js" },
+      { iconClass: "fas fa-database", name: "Express" },
+    ],
   },
   {
-    title: "Blog Personal",
-    description: "Blog personal hecho con Javascrip y Tailwindcss",
-    image: "src/assets/background.svg",
-    link: "#",
-  },
-  {
-    title: "E-commerce JS",
-    description: "Tienda online con Node.js y PostgreSQL.",
-    image: "src/assets/nice.png",
-    link: "#",
-  },
-  {
-    title: "E-commerce JS",
-    description: "Tienda online con Node.js y PostgreSQL.",
-    image: "src/assets/nice.png",
-    link: "#",
+    title: "Database & Tools",
+    iconClass: "fas fa-database text-purple-500 bg-purple-50",
+    items: [
+      { iconClass: "fas fa-database", name: "PostgreSQL" },
+      { iconClass: "fab fa-git-alt", name: "Git" },
+      { iconClass: "fab fa-github", name: "GitHub" },
+    ],
   },
 ];
+const particles = Array.from({ length: 35 }, () => ({
+  left: `${Math.random() * 100}%`,
+  top: `${Math.random() * 50}%`,
+}));
 ---
 
 <Layout>
   <section
-    class="h-auto pb-10  bg-gradient-to-t  from-neonBlue to-turquesa flex flex-col"
+    id="hero"
+    class="min-h-screen bg-gradient-to-t from-neonCyan to- flex flex-col justify-center items-center"
   >
+    {
+      particles.map((particle) => (
+        <span
+          class="absolute border-white border-2 w-[2px] h-[2px] bg-yellow-300 rounded-full animate-pulse"
+          style={`left: ${particle.left}; bottom: ${particle.top};`}
+        />
+      ))
+    }
     <Cardhero />
-
+    <a class="absolute mx-auto animate-pulse text-white bottom-9" href="#bento">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-arrow-big-down-dash-icon lucide-arrow-big-down-dash w-15 h-15"
+        ><path d="M15 5H9"></path><path d="M15 9v3h4l-7 7-7-7h4V9z"></path></svg
+      >
+    </a>
   </section>
-  <section
-    class="flex flex-col items-center justify-center border-2 bg-gradient-to-t from-darkBlue via-mutedBlue to-red-900"
-  >
-  <h3 class="text-[3rem] font-semibold text-mutedBlue">Proyectos</h3>
-    <div
-      class="md:max-w-254 w-full flex items-center md:p-2 [@media(max-width:426px)]:flex-col flex-wrap gap-6 p-5 border"
-    >
-      {projects.map((project) => <Bento {...project} />)}
+  <!-- 
+  <Slider>
+    <PageSlider>
+      <div
+        class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center"
+      >
+        Columna Izquierda: Contenido principal
+       
+  <article class="space-y-6">
+    <header>
+      <h1 class="text-4xl md:text-5xl font-serif font-semibold text-white">
+        Sobre Mi
+        <span class="block text-lg text-blue-300 mt-2">
+          23 años · Desarrollador Web Jr · Lima
+        </span>
+      </h1>
+    </header>
+
+    <div class="space-y-4">
+      <blockquote class="p-6 bg-gray-800 rounded-xl border-l-4 border-blue-400">
+        <p class="text-gray-300 italic">
+          "Creo en el desarrollo de software como herramienta para resolver
+          problemas reales, priorizando código limpio y trabajo colaborativo."
+        </p>
+      </blockquote>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div
+          class="p-4 bg-gray-800 rounded-xl hover:bg-gray-750 transition-colors"
+        >
+          <i class="fas fa-bullseye text-blue-400 text-xl mb-2"></i>
+          <h3 class="text-white font-semibold text-sm">Visión 2026</h3>
+          <p class="text-gray-300 text-xs">
+            Líder técnico en proyectos escalables
+          </p>
+        </div>
+        <div
+          class="p-4 bg-gray-800 rounded-xl hover:bg-gray-750 transition-colors"
+        >
+          <i class="fas fa-rocket text-purple-400 text-xl mb-2"></i>
+          <h3 class="text-white font-semibold text-sm">Meta Actual</h3>
+          <p class="text-gray-300 text-xs">Dominar arquitecturas full-stack</p>
+        </div>
+      </div>
     </div>
-  </section>
+  </article>
 
-  <section class="flex flex-col justify-center items-center mb-4">
-    <h4 class="font-semibold text-mutedBlue text-[2rem] my-4">Estudios</h4>
-    <LineaT />
-  </section>
-  <Formulario />
+ 
+  <aside class="space-y-8">
+    <section class="bg-gray-800 p-8 rounded-2xl">
+      <h3 class="text-xl font-bold text-white mb-6">Mi Trayectoria</h3>
+      <div class="space-y-6">
+        <article class="flex items-center gap-4">
+          <div class="text-blue-400 text-2xl">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div>
+            <h4 class="text-white font-semibold">Estudiando Actualmente</h4>
+            <p class="text-gray-400">React Avanzado · Node.js · MongoDB</p>
+          </div>
+        </article>
+
+        <article class="flex items-center gap-4">
+          <div class="text-purple-400 text-2xl">
+            <i class="fas fa-tasks"></i>
+          </div>
+          <div>
+            <h4 class="text-white font-semibold">Próximos Objetivos</h4>
+            <ul class="text-gray-400 list-disc pl-4">
+              <li>Implementar CI/CD profesional</li>
+              <li>Desarrollar proyecto full-stack completo</li>
+              <li>Aprender TypeScript avanzado</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+  </aside>
 </Layout>
+
+<PageSlider>
+  <div class="max-w-4xl mx-auto px-4 grid md:grid-cols-2 gap-8">
+  
+    <section class="space-y-6" aria-labelledby="stack-principal-heading">
+      <h2 id="stack-principal-heading" class="text-3xl font-bold text-white">
+        Stack Principal
+      </h2>
+      <ul class="grid grid-cols-2 gap-4">
+        <li
+          class="p-4 bg-gray-800 rounded-xl hover:bg-gray-750 transition-colors"
+        >
+          <i class="fab fa-react text-blue-400 text-2xl mb-2"></i>
+          <h3 class="text-white font-semibold">Frontend</h3>
+          <p class="text-gray-300 text-sm">React · Tailwind · Redux</p>
+        </li>
+        <li
+          class="p-4 bg-gray-800 rounded-xl hover:bg-gray-750 transition-colors"
+        >
+          <i class="fab fa-node text-green-400 text-2xl mb-2"></i>
+          <h3 class="text-white font-semibold">Backend</h3>
+          <p class="text-gray-300 text-sm">Express · REST APIs · JWT</p>
+        </li>
+      </ul>
+    </section>
+
+   
+    <section class="space-y-6" aria-labelledby="roadmap-heading">
+      <h2 id="roadmap-heading" class="text-3xl font-bold text-white">
+        Roadmap 2024-2026
+      </h2>
+      <ul class="space-y-4">
+        <li class="flex items-center gap-3">
+          <div class="w-3 h-3 bg-blue-400 rounded-full"></div>
+          <div>
+            <h4 class="text-white">2024</h4>
+            <p class="text-gray-300">Dominio de MERN Stack</p>
+          </div>
+        </li>
+        <li class="flex items-center gap-3">
+          <div class="w-3 h-3 bg-purple-400 rounded-full"></div>
+          <div>
+            <h4 class="text-white">2025</h4>
+            <p class="text-gray-300">Especialización en Cloud</p>
+          </div>
+        </li>
+        <li class="flex items-center gap-3">
+          <div class="w-3 h-3 bg-green-400 rounded-full"></div>
+          <div>
+            <h4 class="text-white">2026</h4>
+            <p class="text-gray-300">Arquitectura de Sistemas</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </div>
+</PageSlider>
+-->
+<section
+  id="bento"
+  class="flex flex-col items-center h-auto justify-center bg-gradient-to-t from-dorado to-neonCyan"
+>
+  <h3
+    class="text-[3rem] font-serif text-black pt-10 relative top-0 font-semibold"
+  >
+    Proyectos
+  </h3>
+  <span class="block w-40 h-1 bg-indigo-500 mx-auto mt-3 mb-8 rounded-full"
+  ></span>
+  <div
+    class="md:max-w-254 w-full flex items-center justify-center md:p-2 [@media(max-width:426px)]:flex-col flex-wrap gap-6 md:gap-4 p-5"
+  >
+    {projects.map((project) => <Bento {...project} />)}
+  </div>
+</section>
+
+<section
+  id="tecnologias"
+  class="py-8 md:py-12 bg-gradient-to-b from-dorado to-mutedBlue"
+>
+  <TecSection techStack={techStack} />
+</section>
+
+<section
+  id="experiencia"
+  class="flex flex-col justify-center items-center pb-50 bg-gradient-to-b from-mutedBlue via-neonGreen to-neonGreen"
+>
+  <h4 class="text-black text-[3rem] mt-20 font-serif font-semibold">
+    Estudios
+  </h4>
+  <span class="block w-40 h-1 bg-indigo-500 mx-auto mt-3 mb-8 rounded-full"
+  ></span>
+  <LineaT />
+</section>
+<section
+  class="flex justify-center items-center bg-gradient-to-t from-darkBlue to-neonGreen h-screen"
+>
+  <Formulario />
+</section>

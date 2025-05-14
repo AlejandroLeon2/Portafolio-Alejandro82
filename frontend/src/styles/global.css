@@ -11,6 +11,20 @@
         "EHLT" 12;
 }
 
+:root {
+    --intermediobento-ancho: 347px;
+    --intermediobento-altura: 260px;
+
+    --pequeñobento-ancho: 190px;
+    --pequeñobento-altura: 140px;
+
+    --medianobento-ancho: 264px;
+    --medianobento-altura: 260px;
+
+    --grandebento-ancho: 555px;
+    --grandebento-altura: 250px;
+}
+
 @theme {
     --color-darkBlue: #1C2A48;
     --color-deepGray: #313338;
@@ -23,4 +37,6 @@
     --color-turquesa: #1abc9c;
     --color-dorado: #f39c12;
     --color-rojo: #c0392b;
+    --color-morado:#3B3B98;
+    --color-cafe:#cd6133;
 }

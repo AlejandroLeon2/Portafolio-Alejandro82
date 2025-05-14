@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Themes from "../components/Themes.astro";
 ---
 
 <!doctype html>
@@ -10,12 +11,32 @@ import Footer from "../components/Footer.astro";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+    <title>Alejandro82</title>
   </head>
   <body>
-    <Header></Header>
+    <!--     <Themes /> -->
+
+    <Header />
     <slot />
-    <Footer></Footer>
+    <Footer />
   </body>
 </html>
+<style>
+  @keyframes slowRotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .slow-spin {
+    animation: slowRotate 60s linear infinite; /* Cambia 60s por el tiempo que prefieras */
+  }
+</style>
