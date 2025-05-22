@@ -7,6 +7,7 @@ import LineaT from "../components/LineaT.astro";
 import TecSection from "../components/TecSection.astro";
 import Slider from "../components/Slider.astro";
 import PageSlider from "../components/PageSlider.astro";
+import Titulo from "../components/Titulo.astro";
 import { projects } from "../utils/proyectos";
 
 const techStack = [
@@ -38,217 +39,297 @@ const techStack = [
     ],
   },
 ];
-const particles = Array.from({ length: 35 }, () => ({
-  left: `${Math.random() * 100}%`,
-  top: `${Math.random() * 50}%`,
-}));
 ---
 
 <Layout>
-  <section
-    id="hero"
-    class="min-h-screen bg-gradient-to-t from-neonCyan to- flex flex-col justify-center items-center"
-  >
-    {
-      particles.map((particle) => (
-        <span
-          class="absolute border-white border-2 w-[2px] h-[2px] bg-yellow-300 rounded-full animate-pulse"
-          style={`left: ${particle.left}; bottom: ${particle.top};`}
-        />
-      ))
-    }
-    <Cardhero />
-    <a class="absolute mx-auto animate-pulse text-white bottom-9" href="#bento">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="lucide lucide-arrow-big-down-dash-icon lucide-arrow-big-down-dash w-15 h-15"
-        ><path d="M15 5H9"></path><path d="M15 9v3h4l-7 7-7-7h4V9z"></path></svg
+  <section>
+    <section
+      id="hero"
+      class="min-h-screen relative 2xl:to-transparent 2xl:from-transparent 2xl:min-h-1/2 bg-gradient-to-t from-neonCyan to-white flex flex-col justify-center items-center"
+    >
+      <Cardhero />
+      <a
+        class="absolute 2xl:hidden mx-auto animate-bounce 2xl:text-black text-white bottom-4"
+        href="#sobreMi"
       >
-    </a>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-arrow-big-down-dash-icon animate-pulse w-15 h-15"
+          ><path d="M15 5H9"></path><path d="M15 9v3h4l-7 7-7-7h4V9z"
+          ></path></svg
+        >
+      </a>
+    </section>
+    <section
+      id="sobreMi"
+      class="bg-neonCyan 2xl:bg-transparent 2xl:min-h-1/2 flex flex-col justify-center items-center"
+    >
+      <Titulo titulo="Sobre Mi" separacion="2xl:hidden py-8" />
+      <Slider>
+        <PageSlider>
+          <section
+            class="scroll-t-96 max-w-6xl lg:px-20 xl:px-20 px-4 grid md:grid-cols-2 gap-2 md:gap-4 place-items-center"
+          >
+            <article class="md:space-y-6">
+              <header class="flex items-center r">
+                <h1
+                  class="text-4xl md:text-5xl lg:text-5xl max-w-120 w-full kaus text-white"
+                >
+                  Pedro Daniel Alejandro Leon
+                  <span
+                    class="block poppins text-sm md:text-lg my-3 text-blue-300 md:mt-2"
+                  >
+                    23 años · Peru-Lima
+                  </span>
+                </h1>
+              </header>
+
+              <div class="flex flex-col items-center">
+                <blockquote
+                  class="p-4 md:p-6 bg-gray-800 max-w-65 md:max-w-90 rounded-xl border-l-4 border-blue-400"
+                >
+                  <p class="text-gray-300 text-xs md:text-sm italic">
+                    "Creo en el desarrollo de software como herramienta para
+                    resolver problemas reales, priorizando código limpio y
+                    trabajo colaborativo."
+                  </p>
+                </blockquote>
+              </div>
+            </article>
+            <article class="bg-gray-800 poppins p-6 rounded-2xl">
+              <h2
+                class="text-2xl kaus text-white mb-4 border-b-2 border-blue-400 pb-2"
+              >
+                <i class="fas fa-graduation-cap mr-2"></i>Formación Actual
+              </h2>
+              <div class="space-y-6">
+                <div class="relative pl-6 border-l-2 border-gray-600">
+                  <div
+                    class="absolute w-3 h-3 bg-purple-400 rounded-full -left-[7px] top-2"
+                  >
+                  </div>
+                  <h3 class="text-white kaus">Bootcamp Nómada</h3>
+                  <p class="text-gray-300 text-sm">Octubre 2024 - Actualidad</p>
+                  <div class="mt-4 space-y-2">
+                    <div class="flex justify-between text-sm">
+                      <span class="text-blue-400 kaus">Progreso:</span>
+                      <span class="text-gray-400">192h/288h</span>
+                    </div>
+                    <div class="w-full bg-gray-700 rounded-full h-2">
+                      <div
+                        class="bg-purple-400 w-[60%] animate-pulse h-2 rounded-full transition-all duration-500"
+                        role="progressbar"
+                      >
+                      </div>
+                    </div>
+                  </div>
+                  <ul
+                    class="mt-4 text-gray-400 text-sm list-disc pl-4 space-y-2"
+                  >
+                    <li>Programación FullStack intensiva</li>
+                    <li>Metodologías ágiles y trabajo en equipo</li>
+                    <li>Preparación para el mercado laboral</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </section>
+        </PageSlider>
+        <PageSlider>
+          <section
+            class="w-full mx-auto px-4 py-8 flex justify-center"
+            aria-label="Sección de formación y proyectos"
+          >
+            <article class="bg-gray-800 p-4 rounded-2xl">
+              <h2
+                class="text-2xl text-center kaus text-white mb-4 border-b-2 border-green-400 pb-2"
+              >
+                Proyecto Reciente
+              </h2>
+
+              <div class="space-y-6">
+                <div
+                  class="bg-gray-750 poppins rounded-xl p-4 hover:bg-gray-700 transition-colors"
+                >
+                  <div class="flex items-center gap-4 mb-3">
+                    <div
+                      class="w-12 h-12 bg-gray-600 rounded-lg flex items-center justify-center"
+                    >
+                      <i class="fas fa-leaf text-2xl text-green-400"></i>
+                    </div>
+                    <div>
+                      <h3 class="text-white font-semibold">
+                        Alejandro Paisajismo
+                      </h3>
+                      <p class="text-gray-300 text-sm">Landing Page</p>
+                    </div>
+                  </div>
+
+                  <div class="space-y-4">
+                    <ul class="text-gray-300 text-sm list-disc pl-4 space-y-2">
+                      <li>Diseño orientado a la experiencia visual</li>
+                      <li>Galería interactiva de proyectos</li>
+                      <li>Optimizado para dispositivos móviles</li>
+                      <li>Sistema de presupuestos online</li>
+                    </ul>
+
+                    <a
+                      href="#"
+                      target="_blank"
+                      class="inline-flex items-center mt-4 px-4 py-2 bg-green-400/20 text-green-400 rounded-lg hover:bg-green-400/30 transition-colors text-sm"
+                      aria-label="Ver proyecto de pagina de Jardineria"
+                    >
+                      <i class="fas fa-external-link-alt mr-2"></i>
+                      Visitar sitio
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </section>
+        </PageSlider>
+      </Slider>
+    </section>
   </section>
-  <!-- 
-  <Slider>
-    <PageSlider>
-      <div
-        class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center"
-      >
-        Columna Izquierda: Contenido principal
-       
-  <article class="space-y-6">
-    <header>
-      <h1 class="text-4xl md:text-5xl font-serif font-semibold text-white">
-        Sobre Mi
-        <span class="block text-lg text-blue-300 mt-2">
-          23 años · Desarrollador Web Jr · Lima
-        </span>
-      </h1>
-    </header>
 
-    <div class="space-y-4">
-      <blockquote class="p-6 bg-gray-800 rounded-xl border-l-4 border-blue-400">
-        <p class="text-gray-300 italic">
-          "Creo en el desarrollo de software como herramienta para resolver
-          problemas reales, priorizando código limpio y trabajo colaborativo."
-        </p>
-      </blockquote>
-
-      <div class="grid grid-cols-2 gap-4">
-        <div
-          class="p-4 bg-gray-800 rounded-xl hover:bg-gray-750 transition-colors"
-        >
-          <i class="fas fa-bullseye text-blue-400 text-xl mb-2"></i>
-          <h3 class="text-white font-semibold text-sm">Visión 2026</h3>
-          <p class="text-gray-300 text-xs">
-            Líder técnico en proyectos escalables
-          </p>
-        </div>
-        <div
-          class="p-4 bg-gray-800 rounded-xl hover:bg-gray-750 transition-colors"
-        >
-          <i class="fas fa-rocket text-purple-400 text-xl mb-2"></i>
-          <h3 class="text-white font-semibold text-sm">Meta Actual</h3>
-          <p class="text-gray-300 text-xs">Dominar arquitecturas full-stack</p>
-        </div>
-      </div>
+  <section
+    id="bento"
+    class="flex flex-col items-center h-auto justify-center 2xl:from-transparent 2xl:to-transparent bg-gradient-to-t from-dorado to-neonCyan"
+  >
+    <Titulo titulo="Proyectos" />
+    <div
+      id="sectionBento"
+      class="md:max-w-220 w-full grid grid-cols-1 md:grid-cols-3 align-self-center gap-6 md:gap-4 md:px-1 px-5"
+    >
+      {projects.map((project) => <Bento {...project} />)}
     </div>
-  </article>
+  </section>
 
- 
-  <aside class="space-y-8">
-    <section class="bg-gray-800 p-8 rounded-2xl">
-      <h3 class="text-xl font-bold text-white mb-6">Mi Trayectoria</h3>
-      <div class="space-y-6">
-        <article class="flex items-center gap-4">
-          <div class="text-blue-400 text-2xl">
-            <i class="fas fa-graduation-cap"></i>
-          </div>
-          <div>
-            <h4 class="text-white font-semibold">Estudiando Actualmente</h4>
-            <p class="text-gray-400">React Avanzado · Node.js · MongoDB</p>
-          </div>
-        </article>
+  <section
+    id="tecnologias"
+    class="py-8 md:py-12 2xl:col-span-2 2xl:from-transparent 2xl:to-transparent bg-gradient-to-b from-dorado to-mutedBlue"
+  >
+    <Titulo titulo="Tecnologias" />
+    <TecSection techStack={techStack} />
+  </section>
 
-        <article class="flex items-center gap-4">
-          <div class="text-purple-400 text-2xl">
-            <i class="fas fa-tasks"></i>
+  <section class="2xl:col-span-2 2xl:grid 2xl:grid-cols-7">
+    <section
+      id="experiencia"
+      class="flex flex-col 2xl:col-span-4 2xl:py-4 justify-center items-center 2xl:from-transparent 2xl:via-transparent 2xl:to-transparent bg-gradient-to-b from-mutedBlue via-neonGreen to-neonGreen"
+    >
+      <Titulo titulo="Estudios" />
+      <LineaT />
+    </section>
+    <section
+      id="contacto"
+      class="w-full h-full 2xl:col-span-1 2xl:col-start-6 2xl:from-transparent 2xl:to-transparent py-4 bg-gradient-to-b from-neonGreen to-darkBlue flex flex-col items-center px-4 2xl:px-0 gap-8"
+    >
+      <div class="flex flex-col justify-center items-center space-y-4">
+        <Titulo titulo="En Búsqueda de Nuevos Desafíos" />
+        <div
+          class="md:hidden 2xl:block flex flex-col items-center justify-center"
+        >
+          <p
+            class="text-white min-w-[300px] px-2 w-full max-w-[550px] text-sm poppins"
+          >
+            Soy desarrollador web con experiencia en backend, bases de datos y
+            diseño interactivo, con un fuerte enfoque en accesibilidad y
+            rendimiento. Si buscas transformar proyectos digitales con
+            soluciones creativas y prácticas, conversemos.
+          </p>
+          <div
+            class="flex justify-center mx-auto items-center my-4 min-w-[200px] w-full max-w-[250px] gap-3"
+          >
+            <i
+              class="text-3xl h-9 p-1 text-white bg-neonGreen/30 rounded-lg fas fa-envelope group-hover:bg-neonGreen/20 transition"
+            >
+            </i>
+            <p class="text-lg md:text-xl kaus leading-5">
+              Correo Electrónico <a
+                href="mailto:alejandroleonpedro7@gmail.com"
+                class="text-gray-300 text-xs 2xl:text-sm poppins hover:text-dorado transition"
+              >
+                alejandroleonpedro7@gmail.com
+              </a>
+            </p>
           </div>
-          <div>
-            <h4 class="text-white font-semibold">Próximos Objetivos</h4>
-            <ul class="text-gray-400 list-disc pl-4">
-              <li>Implementar CI/CD profesional</li>
-              <li>Desarrollar proyecto full-stack completo</li>
-              <li>Aprender TypeScript avanzado</li>
-            </ul>
+        </div>
+      </div>
+
+      <div class="w-auto max-w-6xl flex justify-around gap-12 z-10">
+        <Formulario />
+
+        <section
+          class="flex flex-col items-center 2xl:hidden space-x-4 group [@media(max-width:767px)]:hidden"
+        >
+          <p
+            class="text-white min-w-[300px] w-full max-w-[400px] lg:max-w-[550px] text-sm lg:text-lg poppins"
+          >
+            Soy desarrollador web con experiencia en backend, bases de datos y
+            diseño interactivo, con un fuerte enfoque en accesibilidad y
+            rendimiento. Si buscas transformar proyectos digitales con
+            soluciones creativas y prácticas, conversemos.
+          </p>
+          <div
+            class="flex justify-center items-center my-4 min-w-[200px] w-full max-w-[250px] gap-3"
+          >
+            <i
+              class="text-3xl h-9 p-1 text-white bg-neonGreen/30 rounded-lg fas fa-envelope group-hover:bg-neonGreen/20 transition"
+            >
+            </i>
+            <p class="text-lg md:text-xl kaus leading-5">
+              Correo Electrónico <a
+                href="mailto:alejandroleonpedro7@gmail.com"
+                class="text-gray-300 text-sm poppins hover:text-dorado transition"
+              >
+                alejandroleonpedro7@gmail.com
+              </a>
+            </p>
           </div>
-        </article>
+        </section>
       </div>
     </section>
-  </aside>
+  </section>
 </Layout>
+<style>
+  .ojo {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
 
-<PageSlider>
-  <div class="max-w-4xl mx-auto px-4 grid md:grid-cols-2 gap-8">
-  
-    <section class="space-y-6" aria-labelledby="stack-principal-heading">
-      <h2 id="stack-principal-heading" class="text-3xl font-bold text-white">
-        Stack Principal
-      </h2>
-      <ul class="grid grid-cols-2 gap-4">
-        <li
-          class="p-4 bg-gray-800 rounded-xl hover:bg-gray-750 transition-colors"
-        >
-          <i class="fab fa-react text-blue-400 text-2xl mb-2"></i>
-          <h3 class="text-white font-semibold">Frontend</h3>
-          <p class="text-gray-300 text-sm">React · Tailwind · Redux</p>
-        </li>
-        <li
-          class="p-4 bg-gray-800 rounded-xl hover:bg-gray-750 transition-colors"
-        >
-          <i class="fab fa-node text-green-400 text-2xl mb-2"></i>
-          <h3 class="text-white font-semibold">Backend</h3>
-          <p class="text-gray-300 text-sm">Express · REST APIs · JWT</p>
-        </li>
-      </ul>
-    </section>
+  .pupila {
+    width: 20px;
+    height: 20px;
+    background: black;
+    border-radius: 50%;
+    position: absolute;
+  }
+</style>
+<script is:inline>
+  document.addEventListener("mousemove", (event) => {
+    const ojo = document.querySelector(".ojo");
+    const pupila = document.querySelector(".pupila");
 
-   
-    <section class="space-y-6" aria-labelledby="roadmap-heading">
-      <h2 id="roadmap-heading" class="text-3xl font-bold text-white">
-        Roadmap 2024-2026
-      </h2>
-      <ul class="space-y-4">
-        <li class="flex items-center gap-3">
-          <div class="w-3 h-3 bg-blue-400 rounded-full"></div>
-          <div>
-            <h4 class="text-white">2024</h4>
-            <p class="text-gray-300">Dominio de MERN Stack</p>
-          </div>
-        </li>
-        <li class="flex items-center gap-3">
-          <div class="w-3 h-3 bg-purple-400 rounded-full"></div>
-          <div>
-            <h4 class="text-white">2025</h4>
-            <p class="text-gray-300">Especialización en Cloud</p>
-          </div>
-        </li>
-        <li class="flex items-center gap-3">
-          <div class="w-3 h-3 bg-green-400 rounded-full"></div>
-          <div>
-            <h4 class="text-white">2026</h4>
-            <p class="text-gray-300">Arquitectura de Sistemas</p>
-          </div>
-        </li>
-      </ul>
-    </section>
-  </div>
-</PageSlider>
--->
-<section
-  id="bento"
-  class="flex flex-col items-center h-auto justify-center bg-gradient-to-t from-dorado to-neonCyan"
->
-  <h3
-    class="text-[3rem] font-serif text-black pt-10 relative top-0 font-semibold"
-  >
-    Proyectos
-  </h3>
-  <span class="block w-40 h-1 bg-indigo-500 mx-auto mt-3 mb-8 rounded-full"
-  ></span>
-  <div
-    class="md:max-w-254 w-full flex items-center justify-center md:p-2 [@media(max-width:426px)]:flex-col flex-wrap gap-6 md:gap-4 p-5"
-  >
-    {projects.map((project) => <Bento {...project} />)}
-  </div>
-</section>
+    const rect = ojo.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
 
-<section
-  id="tecnologias"
-  class="py-8 md:py-12 bg-gradient-to-b from-dorado to-mutedBlue"
->
-  <TecSection techStack={techStack} />
-</section>
-
-<section
-  id="experiencia"
-  class="flex flex-col justify-center items-center pb-50 bg-gradient-to-b from-mutedBlue via-neonGreen to-neonGreen"
->
-  <h4 class="text-black text-[3rem] mt-20 font-serif font-semibold">
-    Estudios
-  </h4>
-  <span class="block w-40 h-1 bg-indigo-500 mx-auto mt-3 mb-8 rounded-full"
-  ></span>
-  <LineaT />
-</section>
-<section
-  class="flex justify-center items-center bg-gradient-to-t from-darkBlue to-neonGreen h-screen"
->
-  <Formulario />
-</section>
+    const movimientoMax = 0.5; // Límite de movimiento
+    pupila.style.transform = `translate(${x * movimientoMax}px, ${y * movimientoMax}px)`;
+  });
+</script>

@@ -1,10 +1,22 @@
 ---
-const { link, text } = Astro.props;
+const {
+  link,
+  text,
+  tamaño,
+  seleccionar,
+  descargar,
+  ventana,
+  tipo = "text/html",
+  color = " bg-blue-500 hover:bg-blue-600 text-white",
+} = Astro.props;
 ---
 
 <a
+  type={tipo}
+  target={ventana}
+  download={descargar}
   href={link}
-  class="mt-3 inline-block text-[0.725rem] h-6 font-mono hover:-translate-y-1 active:scale-95 bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded"
+  class={` ${tamaño} ${seleccionar} h-full w-auto py-1 px-4 poppins hover:-translate-y-1 active:scale-95 ${color}  rounded-2xl`}
 >
   {text}
 </a>

@@ -2,9 +2,9 @@
 const { iconClass, name, ocultar, utiles } = Astro.props;
 ---
 
-<div
-  class={`flex items-center ${utiles} h-auto p-2 rounded-md bg-gray-50 hover:bg-white transition-colors`}
+<li
+  class={`flex items-center ${utiles} py-1 px-2 h-auto rounded-2xl bg-gray-50 hover:bg-white transition-colors`}
 >
-  <i class={`${iconClass} text-gray-600 text-sm mr-2`}></i>
-  <span class={`text-xs md:text-sm text-gray-600 ${ocultar}`}>{name}</span>
-</div>
+  <i class={`${iconClass} text-gray-600  mr-2`}></i>
+  <p class={`  poppins text-gray-600 ${ocultar}`}>{name}</p>
+</li>

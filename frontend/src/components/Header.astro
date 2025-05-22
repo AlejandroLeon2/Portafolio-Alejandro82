@@ -32,24 +32,49 @@
 
   <nav
     id="desktop-menu"
-    class="[@media(max-width:767px)]:hidden md:flex justify-around fixed z-50 top-2 left-0 right-0 w-125 mx-auto px-6 py-2 bg-black/80 text-white rounded-full font-mono"
+    class="[@media(max-width:767px)]:hidden md:flex justify-around fixed z-50 top-2 left-0 right-0 w-auto mx-10 lg:mx-30 xl:mx-80 px-10 py-2 bg-black/80 text-white rounded-full kaus"
   >
-    <a href="#hero" class="linea">Hero</a>
+    <a href="#hero" class="focus:underline  active:underline linea">Hero</a>
+    <a href="#sobreMi" class="linea">Sobre Mi</a>
     <a href="#bento" class="linea">Proyectos</a>
     <a href="#tecnologias" class="linea">Tecnologías</a>
     <a href="#experiencia" class="linea">Experiencia</a>
-    <a href="#formulario" class="linea">Contacto</a>
+    <a href="#contacto" class="linea">Contacto</a>
   </nav>
 
   <nav
     id="mobile-menu"
-    class="absolute text-xl font-mono font-semibold -top-2 left-0 w-full bg-black text-white flex flex-col items-center gap-4 py-4 transition-transform duration-900 -translate-y-full"
+    class="absolute text-xl kaus  -top-2 left-0 w-full bg-black/50 text-white flex flex-col items-center gap-4 py-4 transition-transform duration-900 -translate-y-full"
   >
-    <a href="#hero" class="focus:text-dorado rotate-vertical child">Hero</a>
-    <a href="#bento" class="focus:text-dorado rotate-vertical child">Proyectos</a>
-    <a href="#tecnologias" class="focus:text-dorado rotate-vertical child">Tecnologías</a>
-    <a href="#experiencia" class="focus:text-dorado rotate-vertical child">Experiencia</a>
-    <a href="#formulario" class="focus:text-dorado rotate-vertical child">Contacto</a>
+    <a
+      href="#hero"
+      class="focus:text-dorado active:text-dorado rotate-vertical child">Hero</a
+    >
+    <a
+      href="#sobreMi"
+      class="focus:text-dorado active:text-dorado rotate-vertical child"
+      >Sobre Mi</a
+    >
+    <a
+      href="#bento"
+      class="focus:text-dorado active:text-dorado rotate-vertical child"
+      >Proyectos</a
+    >
+    <a
+      href="#tecnologias"
+      class="focus:text-dorado active:text-dorado rotate-vertical child"
+      >Tecnologías</a
+    >
+    <a
+      href="#experiencia"
+      class="focus:text-dorado active:text-dorado rotate-vertical child"
+      >Experiencia</a
+    >
+    <a
+      href="#contacto"
+      class="focus:text-dorado active:text-dorado rotate-vertical child"
+      >Contacto</a
+    >
   </nav>
   <script is:inline>
     document
@@ -65,12 +90,12 @@
 </header>
 
 <script>
-
-
   document.getElementById("abrir")?.addEventListener("click", toggleNavbar);
   document.getElementById("cerrar")?.addEventListener("click", toggleNavbar);
   function toggleNavbar() {
-    document.getElementById("mobile-menu")?.classList.toggle("-translate-y-full");
+    document
+      .getElementById("mobile-menu")
+      ?.classList.toggle("-translate-y-full");
     document.getElementById("cerrar")?.classList.toggle("hidden");
     document.getElementById("abrir")?.classList.toggle("hidden");
   }

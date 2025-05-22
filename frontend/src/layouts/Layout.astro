@@ -2,7 +2,10 @@
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import Themes from "../components/Themes.astro";
+const particles = Array.from({ length: 35 }, () => ({
+  left: `${Math.random() * 100}%`,
+  top: `${Math.random() * 100}%`,
+}));
 ---
 
 <!doctype html>
@@ -19,14 +22,31 @@ import Themes from "../components/Themes.astro";
     <title>Alejandro82</title>
   </head>
   <body>
-    <!--     <Themes /> -->
-
     <Header />
-    <slot />
+    <section class="absolute border h-100 w-full">
+      {
+        particles.map((particle) => (
+          <span
+            class="absolute border-dorado 2xl:border-white border-2 w-[2px] h-[2px] bg-yellow-300 rounded-full animate-pulse"
+            style={`left: ${particle.left}; bottom: ${particle.top};`}
+          />
+        ))
+      }
+    </section>
+
+    <main
+      class="2xl:grid 2xl:grid-cols-2  2xl:bg-gradient-to-b from-mutedBlue via-neonGreen to-mutedBlue"
+    >
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>
 <style>
+  html {
+    scroll-behavior: smooth;
+  }
+
   @keyframes slowRotate {
     from {
       transform: rotate(0deg);

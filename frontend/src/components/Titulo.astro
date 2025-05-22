@@ -1,0 +1,13 @@
+---
+const {
+  titulo,
+  tamaño = "md:text-[3.5rem] text-[2.8rem] ",
+  separacion = " my-8",
+  linea = "mt-3 w-40 ",
+} = Astro.props;
+---
+
+<h3 class={` ${tamaño} ${separacion}  kaus text-center  text-black`}>
+  {titulo}
+  <span class={`block ${linea} h-1 bg-indigo-500 mx-auto rounded-full`}></span>
+</h3>

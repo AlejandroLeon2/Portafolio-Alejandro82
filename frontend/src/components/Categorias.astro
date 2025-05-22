@@ -1,16 +1,16 @@
 ---
-import TecItem from "../components/TecItem.astro"
+import TecItem from "../components/TecItem.astro";
 const { title, iconClass, items } = Astro.props;
 ---
 
 <div
-  class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+  class="bg-white p-4 kaus rounded-lg shadow-sm hover:shadow-md transition-shadow"
 >
   <div class="flex items-center mb-4">
-    <i class={`${iconClass} text-sm p-2 rounded-md`}></i>
-    <h3 class="text-base font-semibold text-gray-700 ml-2">{title}</h3>
+    <i class={`${iconClass} text-lg p-2 rounded-md`}></i>
+    <h3 class="text-lg font-semibold text-gray-700 ml-2">{title}</h3>
   </div>
-  <div class="grid grid-cols-2 gap-2">
+  <div class="grid poppins grid-cols-2 gap-2">
     {items.map((item) => <TecItem {...item} />)}
   </div>
 </div>

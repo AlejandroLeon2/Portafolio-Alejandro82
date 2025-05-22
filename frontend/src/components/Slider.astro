@@ -1,20 +1,94 @@
-
+---
+const { tamaño = "lg:w-auto", contenedor = "xl:w-9/12" } = Astro.props;
+---
 
 <section
-  class="h-full min-w-[300px] overflow-x-auto border scroll-smooth snap-x snap-mandatory flex"
+  class={`h-auto 2xl:w-full 2xl:px-4 w-11/12 ${contenedor} flex justify-center items-center relative overflow-hidden rounded-xl`}
 >
-  <section
-    class="absolute -bottom-130 left-1/2 border bg-black w-full items-center justify-center py-4 transform -translate-x-1/2 flex gap-3"
+  <button
+    class="[@media(max-width:427px)]:hidden left-buttom group active:scale-95 flex justify-center items-center duration-400 absolute rounded-2xl buttom-1/2 left-2 xl:left-3 w-8 lg:w-9 xl:w-12 h-9/12 opacity-30 focus:opacity-100 active:opacity-100 hover:opacity-90 bg-white/20 border-white"
   >
-    <a
-      href="#presentacion"
-      class="nav-dot w-3 h-3 rounded-full bg-white border-2 focus:border-dorado"
-    ></a>
-    <a
-      href="#extra"
-      class="nav-dot w-3 h-3 rounded-full bg-white border-2 focus:border-dorado"
-    ></a>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="lucide text-white w-full h-auto xl:p-1 group-hover:animate-pulse"
+      ><path d="M19 15V9"></path><path d="M15 15h-3v4l-7-7 7-7v4h3v6z"
+      ></path></svg
+    >
+  </button>
+  <section
+    class={`${tamaño} slider min-w-[300px] overflow-x-auto rounded-xl scroll-smooth snap-x snap-mandatory flex`}
+  >
+    <slot />
   </section>
-<slot/>
-
+  <button
+    class="[@media(max-width:427px)]:hidden right-buttom group active:scale-95 flex justify-center items-center duration-400 absolute rounded-2xl buttom-1/2 right-2 xl:right-3 w-8 lg:w-9 xl:w-12 h-9/12 opacity-30 focus:opacity-100 active:opacity-100 hover:opacity-90 bg-white/20 border-white"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="lucide text-white w-full h-auto xl:p-1 group-hover:animate-pulse"
+      ><path d="M5 9v6"></path><path d="M9 9h3V5l7 7-7 7v-4H9V9z"></path></svg
+    >
+  </button>
 </section>
+<!--Botones de navegacion -->
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const slider = document.querySelectorAll(".slider");
+    const prev = document.querySelectorAll(".left-buttom");
+    const next = document.querySelectorAll(".right-buttom");
+
+    slider.forEach((slider) => {
+      slider.addEventListener(
+        "wheel",
+        (event) => {
+          event.preventDefault();
+          slider.scrollBy({ left: event.deltaY, behavior: "smooth" });
+        },
+        { passive: false }
+      );
+    });
+
+    //Scroll con botones
+    //boton que desplaza al siguiente elemento
+    next.forEach((nextButton) => {
+      nextButton.addEventListener("click", () => {
+        const slider = nextButton.previousElementSibling;
+        if (slider.classList.contains("slider")) {
+          slider.scrollBy({ left: 300, behavior: "smooth" });
+        }
+      });
+    });
+
+    //boton que desplaza a un elemento previo
+    prev.forEach((prevButton) => {
+      prevButton.addEventListener("click", () => {
+        const slider = prevButton.nextElementSibling;
+        if (slider.classList.contains("slider")) {
+          slider.scrollBy({ left: -300, behavior: "smooth" });
+        }
+      });
+    });
+  });
+</script>
+<style>
+  /* Oculta la barra de scroll en y*/
+  .slider::-webkit-scrollbar {
+    display: none;
+  }
+</style>

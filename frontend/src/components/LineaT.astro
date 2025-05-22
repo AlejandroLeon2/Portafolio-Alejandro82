@@ -4,7 +4,7 @@ import CardLinea from "./cardLinea.astro";
 const time = [
   {
     titulo: "Bootcamp Nómada",
-    subtitulo: "Fundamentos de Programación en C++",
+    subtitulo: "C++ Fundamentos de Programación ",
     descripcion:
       "Exploración de conceptos clave en C++, incluyendo estructuras de control, variables y funciones esenciales.",
     fecha: "Octubre 2024",
@@ -54,7 +54,6 @@ const time = [
   },
 ];
 
-// Mostrar eventos
 ---
 
 <section
@@ -62,29 +61,15 @@ const time = [
   class="w-full flex flex-col items-center mx-auto  relative"
 >
   <div
-    class="absolute mx-auto w-1 h-full bg-gradient-to-t from-neonBlue via-neonCyan to-mutedBlue"
+    class="absolute w-1 h-full bg-gradient-to-t from-neonBlue via-neonCyan to-mutedBlue"
   >
 
   </div>
-  <div class="sticky top-20 bg-turquesa rounded-full">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="w-10 h-10 text-dorado"
-    >
-      <>
-        <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526" />
-        <circle cx="12" cy="8" r="6" />
-      </>
-    </svg>
-  </div>
+  <div class="sticky top-50 bg-turquesa rounded-full text-white  ">
+
+    <i class="fas fa-graduation-cap text-white text-2xl md:text-3xl py-2 md:py-[10.1px] px-1.5 md:px-2"></i>
+
+</div>
 
   {
     time.map((time) => (
@@ -96,24 +81,8 @@ const time = [
         clas={time.alignClass}
         class2={time.layoutClass}
       />
-      <div class="sticky top-20 bg-turquesa rounded-full">
-        <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="w-10 h-10 text-dorado "
-        >
-        <>
-        <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526" />
-        <circle cx="12" cy="8" r="6" />
-        </>
-        </svg>
+      <div class="sticky top-50  bg-turquesa rounded-full text-white   ">
+                    <i class="fas fa-graduation-cap text-white text-2xl md:text-3xl py-2 md:py-[10.1px] px-1.5 md:px-2"></i>
       </div>
     ))
   }
