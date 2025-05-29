@@ -1,6 +1,7 @@
 ---
 import Boton from "./Boton.astro";
 import nice from "../assets/nice.png";
+import { perfilPedro } from "../utils/perfil";
 ---
 
 <section
@@ -11,10 +12,10 @@ import nice from "../assets/nice.png";
       <h2
         class="kaus 2xl:text-black bg-gradient-to-r bg-clip-text text-transparent from-morado via-neonBlue to-turquesa text-[2.5rem] md:text-[3.5rem] px-1 h-14 md:h-19"
       >
-        Pedro Alejandro
+        {`${perfilPedro.nombre.primerNombre} ${perfilPedro.nombre.apellidoPaterno}`}
       </h2>
       <h3 class="kaus text-[1.6rem] md:text-[1.8rem] mb-2">
-        Desarrollador Web Jr
+        {perfilPedro.profesion}
       </h3>
     </div>
 
@@ -31,5 +32,10 @@ import nice from "../assets/nice.png";
       <Boton tamaño="text-lg" link="#contacto" text="Contactame" />
     </section>
   </div>
-  <img src={nice.src} alt="" class="rounded-full w-60 lg:w-75 h-full" />
+  <img
+    src={nice.src}
+    alt={perfilPedro.nombreCompleto()}
+    title={perfilPedro.nombreCompleto()}
+    class="rounded-full w-60 lg:w-75 h-full"
+  />
 </section>

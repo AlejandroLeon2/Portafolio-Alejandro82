@@ -1,6 +1,7 @@
+require('dotenv').config();
 const transporter = require('../config/emailConfig');
 
-async function enviarCorreo(name, email, asunto, message) {
+async function enviarCorreo(name, email, asunto ="Formulario de portafolio ", message) {
     try {
         const mailOptions = {
             from: `${name} : ${email}`,
@@ -16,4 +17,4 @@ async function enviarCorreo(name, email, asunto, message) {
     }
 };
 
-module.exports = enviarCorreo;
+module.exports = { enviarCorreo };

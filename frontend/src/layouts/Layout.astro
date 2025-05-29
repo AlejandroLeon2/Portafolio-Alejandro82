@@ -23,7 +23,7 @@ const particles = Array.from({ length: 35 }, () => ({
   </head>
   <body>
     <Header />
-    <section class="absolute border h-100 w-full">
+    <section class="absolute h-100 w-full">
       {
         particles.map((particle) => (
           <span
@@ -35,7 +35,7 @@ const particles = Array.from({ length: 35 }, () => ({
     </section>
 
     <main
-      class="2xl:grid 2xl:grid-cols-2  2xl:bg-gradient-to-b from-mutedBlue via-neonGreen to-mutedBlue"
+      class="2xl:grid 2xl:grid-cols-2 2xl:bg-gradient-to-b from-mutedBlue via-neonGreen to-mutedBlue"
     >
       <slot />
     </main>

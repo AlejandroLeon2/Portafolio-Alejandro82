@@ -1,13 +1,11 @@
 ---
 import Slider from "./Slider.astro";
-import Categorias from "./Categorias.astro";
 import TecItem from "./TecItem.astro";
-import { projects } from "../utils/proyectos";
 import FotoSlider from "./FotoSlider.astro";
 import Boton from "./Boton.astro";
 import Titulo from "./Titulo.astro";
 const { title, description, image, links, items } = Astro.props;
-let imagen = String(image);
+const { portada, coleccion } = image;
 ---
 
 <section
@@ -20,16 +18,17 @@ let imagen = String(image);
       tamaño="w-full  [@media(max-width:767px)]:hidden  h-[560px] md:h-[400px]"
       contenedor="md:min-w-6/12 z-50"
     >
-      <FotoSlider>
-        <img src={imagen} alt={title} class="w-auto h-full" />
-      </FotoSlider>
-      <FotoSlider>
-        <img src={imagen} alt={title} class="w-auto h-full" />
-      </FotoSlider>
+      {
+        coleccion.map((colection) => 
+          <FotoSlider>
+            <img src={colection.link} alt={colection.nombre} class="w-auto h-full" />
+          </FotoSlider>
+        )
+      }
     </Slider>
     <img
-      src={imagen}
-      alt={title}
+      src={portada.link}
+      alt={portada.nombre}
       class="w-full [@media(min-width:767px)]:hidden h-5/12 rounded-t-2xl md:rounded-l-2xl md:rounded-t-none object-cover"
     />
 

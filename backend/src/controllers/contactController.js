@@ -2,19 +2,19 @@ const contactModel = require('../models/contactModel');
 const emailService = require('../services/emailService');
 const createContacto = async (req, res) => {
     try {
-        const { name, email, asunto, message } = req.body;
-
-        if (!name || !email || !asunto || !message) {
-            return res.status(400).json({ error: `Nombre, asunto, email y mensage son obligatorios.` });
+        const { name, email, message } = req.body;
+        console.log("Datos recibidos:", req.body);
+        if (!name || !email  || !message) {
+            return res.status(400).json({ error: `Nombre, email y mensage son obligatorios.` });
         }
 
-        const newContact = await contactModel.createContacto(name, email, asunto, message);
-        await emailService.enviarCorreo(name, email, asunto, message);
+         await contactModel.createContacto(name, email, message);
+        await emailService.enviarCorreo(name, email, message);
 
         res.status(201).json({
             success: true,
             message: `Contacto creado y notificacion enviada`,
-            data: { name: newContact.nombre }
+            data: { name: name }
         });
     } catch (error) {
         console.error(`Error en createContact`, error);

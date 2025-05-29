@@ -9,7 +9,8 @@
   <input
     id="name"
     type="text"
-    min="1"
+    name="name"
+    minlength="1"
     maxlength="30"
     placeholder="Ingresa tu nombre"
     required
@@ -20,7 +21,8 @@
   <input
     id="email"
     type="email"
-    min="10"
+    name="email"
+    minlength="10"
     maxlength="50"
     placeholder="Ingresa tu correo electronico"
     required
@@ -30,6 +32,7 @@
   <label class="block mt-4 mb-2" for="message">Mensaje:</label>
   <textarea
     id="message"
+    name="message"
     rows="4"
     minlength="4"
     placeholder="Escribe tu mensaje..."
@@ -52,13 +55,13 @@
       console.log(form);
       event.preventDefault();
       try {
-        const res = await fetch("url/data", {
+        const res = await fetch("http://localhost:3000/api/mensaje", {
           method: "POST",
           body: JSON.stringify(form),
           headers: { "Content-Type": "application/json" },
         });
         const respuesta = await res.json();
-        console.log("Respuesta del servidor:", respuesta);
+        console.alert("Respuesta del servidor:", respuesta);
       } catch (error) {
         console.error("Error:", error);
       }

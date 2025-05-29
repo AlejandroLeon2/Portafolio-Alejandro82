@@ -9,36 +9,7 @@ import Slider from "../components/Slider.astro";
 import PageSlider from "../components/PageSlider.astro";
 import Titulo from "../components/Titulo.astro";
 import { projects } from "../utils/proyectos";
-
-const techStack = [
-  {
-    title: "Frontend",
-    iconClass: "fas fa-code text-indigo-500 bg-indigo-50",
-    items: [
-      { iconClass: "fab fa-js", name: "JavaScript" },
-      { iconClass: "fab fa-html5", name: "HTML5" },
-      { iconClass: "fab fa-css3-alt", name: "CSS3" },
-      { iconClass: "fas fa-rocket", name: "Astro" },
-    ],
-  },
-  {
-    title: "Backend",
-    iconClass: "fas fa-server text-green-500 bg-green-50",
-    items: [
-      { iconClass: "fab fa-node", name: "Node.js" },
-      { iconClass: "fas fa-database", name: "Express" },
-    ],
-  },
-  {
-    title: "Database & Tools",
-    iconClass: "fas fa-database text-purple-500 bg-purple-50",
-    items: [
-      { iconClass: "fas fa-database", name: "PostgreSQL" },
-      { iconClass: "fab fa-git-alt", name: "Git" },
-      { iconClass: "fab fa-github", name: "GitHub" },
-    ],
-  },
-];
+import { techStack } from "../utils/tecnologias";
 ---
 
 <Layout>
@@ -207,7 +178,7 @@ const techStack = [
     <Titulo titulo="Proyectos" />
     <div
       id="sectionBento"
-      class="md:max-w-220 w-full grid grid-cols-1 md:grid-cols-3 align-self-center gap-6 md:gap-4 md:px-1 px-5"
+      class="md:max-w-250 w-full grid grid-cols-1 md:grid-cols-3 align-self-center gap-10 md:gap-4 md:px-1 px-5"
     >
       {projects.map((project) => <Bento {...project} />)}
     </div>
@@ -300,36 +271,3 @@ const techStack = [
     </section>
   </section>
 </Layout>
-<style>
-  .ojo {
-    width: 40px;
-    height: 40px;
-    background: white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-  }
-
-  .pupila {
-    width: 20px;
-    height: 20px;
-    background: black;
-    border-radius: 50%;
-    position: absolute;
-  }
-</style>
-<script is:inline>
-  document.addEventListener("mousemove", (event) => {
-    const ojo = document.querySelector(".ojo");
-    const pupila = document.querySelector(".pupila");
-
-    const rect = ojo.getBoundingClientRect();
-    const x = (event.clientX - rect.left) / rect.width - 0.5;
-    const y = (event.clientY - rect.top) / rect.height - 0.5;
-
-    const movimientoMax = 0.5; // Límite de movimiento
-    pupila.style.transform = `translate(${x * movimientoMax}px, ${y * movimientoMax}px)`;
-  });
-</script>
