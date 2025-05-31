@@ -2,14 +2,17 @@ export const projects = [
     {
         title: "Tetris",
         description: "Implementación del clásico juego de puzzle con sistema de puntuación, niveles progresivos y mecánicas modernas",
-        image: { //falta actualizar links de todos los objetos
+        image: { 
             portada: {
-                link: "src/assets/background.svg",
+                link: "src/assets/tetrisC++.png",
                 nombre: "Tetris - Portada Principal"
             },
             coleccion: [
-                { link: "src/assets/tetris-screenshot1.jpg", nombre: "Tetris - Captura de Gameplay" },
-                { link: "src/assets/tetris-screenshot2.jpg", nombre: "Tetris - Menú Principal" }
+                { link: "src/assets/tetrisC++.png", nombre: "Tetris - Captura de Gameplay" },
+                { link: "src/assets/tetrisC++1.png", nombre: "Tetris - Menú Principal" },
+                { link: "src/assets/tetrisC++2.png", nombre: "Tetris - Menú Principal" },
+                { link: "src/assets/tetrisC++3.png", nombre: "Tetris - Menú Principal" }
+
             ]
         },
         links: {
@@ -31,13 +34,13 @@ export const projects = [
         description: "Plataforma completa con carrito dinámico, autenticación JWT, pasarela de pagos y dashboard administrativo",
         image: {
             portada: {
-                link: "src/assets/astro.svg",
+                link: "src/assets/ecommerce.png",
                 nombre: "E-commerce - Vista Principal"
             },
             coleccion: [
-                { link: "src/assets/ecommerce-dashboard.jpg", nombre: "E-commerce - Panel de Administración" },
-                { link: "src/assets/ecommerce-cart.jpg", nombre: "E-commerce - Carrito de Compras" },
-                { link: "src/assets/ecommerce-product.jpg", nombre: "E-commerce - Vista de Producto" }
+                { link: "src/assets/ecommerce1.png", nombre: "E-commerce - Panel de Administración" },
+                { link: "src/assets/ecommerce2.png", nombre: "E-commerce - Carrito de Compras" },
+                { link: "src/assets/ecommerce3.png", nombre: "E-commerce - Vista de Producto" }
             ]
         },
         links: {
@@ -61,11 +64,11 @@ export const projects = [
         description: "Sitio estático con sistema de markdown, búsqueda contextual y modo oscuro automático",
         image: {
             portada: {
-                link: "src/assets/background.svg",
+                link: "src/assets/blog.png",
                 nombre: "Blog Personal - Portada"
             },
             coleccion: [
-                { link: "src/assets/nice.png", nombre: "Blog - Modo Oscuro" },
+                { link: "src/assets/blog.png", nombre: "Blog - Modo Oscuro" },
                 { link: "src/assets/nice.png", nombre: "Blog - Ejemplo de Artículo" }
             ]
         },
@@ -86,19 +89,18 @@ export const projects = [
         description: "Sitio interactivo con tour virtual 3D, calculadora de presupuestos y portfolio visual",
         image: {
             portada: {
-                link: "src/assets/nice.png",
+                link: "src/assets/jardineria.png",
                 nombre: "Jardinería - Vista Principal"
             },
             coleccion: [
-                { link: "src/assets/garden-3d.jpg", nombre: "Jardinería - Tour 3D" },
-                { link: "src/assets/garden-calculator.jpg", nombre: "Jardinería - Calculadora" },
-                { link: "src/assets/garden-gallery.jpg", nombre: "Jardinería - Galería" }
+                { link: "src/assets/jardineria.png", nombre: "Jardinería - Tour 3D" },
+                { link: "src/assets/jardineria1.png", nombre: "Jardinería - Calculadora" }
             ]
         },
         links: {
-            enlaceGit: "#",
-            enlacePage: "#",
-            estado: { texto: "En diseño puedes mirar el prototipo", habilitado: false }
+            enlaceGit: "https://github.com/AlejandroLeon2/landingJardineria",
+            enlacePage: "https://landing-jardineria.vercel.app",
+            estado: { texto: "En diseño puedes mirar el prototipo", habilitado: true }
         },
         clas: "md:col-span-1 md:row-span-2 md:h-[580px]",
         items: [
@@ -114,16 +116,18 @@ export const projects = [
         description: "Tienda especializada con integración ERP, sistema de inventario en tiempo real y reportes avanzados",
         image: {
             portada: {
-                link: "src/assets/nice.png",
+                link: "src/assets/tiendaHg.png",
                 nombre: "E-commerce HG - Dashboard"
             },
             coleccion: [
-                { link: "src/assets/hg-inventory.jpg", nombre: "HG - Sistema de Inventario" },
-                { link: "src/assets/hg-reports.jpg", nombre: "HG - Reportes Avanzados" }
+                { link: "src/assets/tiendaHg1.png", nombre: "HG - Sistema de Inventario" },
+                { link: "src/assets/tiendaHg2.png", nombre: "HG - Reportes Avanzados" },
+                { link: "src/assets/tiendaHg3.png", nombre: "HG - Reportes Avanzados" }
+
             ]
         },
         links: {
-            enlaceGit: "https://github.com/tu-usuario/ecommerce-hg",
+            enlaceGit: "https://github.com/AlejandroLeon2/tienda-online",
             enlacePage: "https://hg.tu-dominio.com",
             estado: { texto: "En desarrollo", habilitado: false }
         },
@@ -135,43 +139,19 @@ export const projects = [
             { iconClass: "fas fa-rocket", name: "Astro" },
         ],
     },
-    {
-        title: "Juego Farming Simulator",
-        description: "Simulador agrícola multijugador con economía dinámica y sistema de cultivos estacionales",
-        image: {
-            portada: {
-                link: "src/assets/nice.png",
-                nombre: "Farming Simulator - Vista Principal"
-            },
-            coleccion: [
-                { link: "src/assets/farming-seasonal.jpg", nombre: "Farming - Cultivos Estacionales" },
-                { link: "src/assets/farming-economy.jpg", nombre: "Farming - Sistema Económico" }
-            ]
-        },
-        links: {
-            enlaceGit: "#",
-            enlacePage: "#",
-            estado: { texto: "Aun en Diseño", habilitado: false }
-        },
-        clas: "md:col-span-1 md:row-span-1",
-        items: [
-            { iconClass: "fab fa-js", name: "JavaScript" },
-            { iconClass: "fas fa-tractor", name: "Phaser 3" },
-            { iconClass: "fas fa-palette", name: "Tailwind" },
-        ],
-    },
+   
     {
         title: "Componentes UI Interactivos",
         description: "Librería de componentes reutilizables con documentación interactiva y ejemplos en vivo",
         image: {
             portada: {
-                link: "src/assets/nice.png",
+                link: "src/assets/jardineria.png",
                 nombre: "UI Components - Portada"
             },
             coleccion: [
-                { link: "src/assets/ui-docs.jpg", nombre: "UI - Documentación" },
-                { link: "src/assets/ui-examples.jpg", nombre: "UI - Ejemplos" },
-                { link: "src/assets/ui-library.jpg", nombre: "UI - Librería" }
+                { link: "src/assets/jardineria.png", nombre: "UI - Documentación" },
+                { link: "src/assets/jardineria.png", nombre: "UI - Ejemplos" },
+                { link: "src/assets/jardineria.png", nombre: "UI - Librería" }
             ]
         },
         links: {
@@ -179,7 +159,7 @@ export const projects = [
             enlacePage: "https://ui.tu-dominio.com",
             estado: { texto: "En diseño", habilitado: false }
         },
-        clas: "md:col-span-3 md:row-span-1",
+        clas: "md:col-span-1 md:row-span-1",
         items: [
             { iconClass: "fas fa-rocket", name: "Astro" },
             { iconClass: "fab fa-js", name: "JavaScript" },

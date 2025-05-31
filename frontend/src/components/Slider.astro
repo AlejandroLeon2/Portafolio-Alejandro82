@@ -47,45 +47,7 @@ const { tamaño = "lg:w-auto", contenedor = "xl:w-9/12" } = Astro.props;
   </button>
 </section>
 <!--Botones de navegacion -->
-<script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
-    const slider = document.querySelectorAll(".slider");
-    const prev = document.querySelectorAll(".left-buttom");
-    const next = document.querySelectorAll(".right-buttom");
 
-    slider.forEach((slider) => {
-      slider.addEventListener(
-        "wheel",
-        (event) => {
-          event.preventDefault();
-          slider.scrollBy({ left: event.deltaY, behavior: "smooth" });
-        },
-        { passive: false }
-      );
-    });
-
-    //Scroll con botones
-    //boton que desplaza al siguiente elemento
-    next.forEach((nextButton) => {
-      nextButton.addEventListener("click", () => {
-        const slider = nextButton.previousElementSibling;
-        if (slider.classList.contains("slider")) {
-          slider.scrollBy({ left: 300, behavior: "smooth" });
-        }
-      });
-    });
-
-    //boton que desplaza a un elemento previo
-    prev.forEach((prevButton) => {
-      prevButton.addEventListener("click", () => {
-        const slider = prevButton.nextElementSibling;
-        if (slider.classList.contains("slider")) {
-          slider.scrollBy({ left: -300, behavior: "smooth" });
-        }
-      });
-    });
-  });
-</script>
 <style>
   /* Oculta la barra de scroll en y*/
   .slider::-webkit-scrollbar {

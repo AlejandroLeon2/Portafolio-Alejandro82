@@ -2,7 +2,6 @@
 import ModalBento from "./ModalBento.astro";
 import Boton from "./Boton.astro";
 const { title, description, image, links, clas, items } = Astro.props;
-
 ---
 
 <div
@@ -34,34 +33,4 @@ const { title, description, image, links, clas, items } = Astro.props;
   items={items}
 />
 
-<script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
-    const sectionBento = document.getElementById("sectionBento");
 
-    sectionBento.addEventListener("click", (event) => {
-      const cardBento = event.target.closest(".cardBento");
-      const modal = cardBento.nextElementSibling;
-      if (event.target.matches(".agrandar")) {
-        modal.classList.toggle("hidden"); //referencia al componenete modalbento
-
-      }
-    });
-  });
-</script>
-
-<!-- 
-<script>
-  const elemento = document.querySelectorAll(".cardBento");
-
-  elemento.forEach((element) => {
-    element.addEventListener("mouseenter", () => {
-      element.classList.toggle("scale-20");
-    });
-  });
-  elemento.forEach((element) => {
-    element.addEventListener("mouseleave", () => {
-      element.classList.toggle("scale-20");
-    });
-  });
-</script>
--->

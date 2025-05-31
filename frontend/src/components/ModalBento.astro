@@ -3,6 +3,7 @@ import Slider from "./Slider.astro";
 import TecItem from "./TecItem.astro";
 import FotoSlider from "./FotoSlider.astro";
 import Boton from "./Boton.astro";
+import BotonSitio from "./BotonSitio.astro";
 import Titulo from "./Titulo.astro";
 const { title, description, image, links, items } = Astro.props;
 const { portada, coleccion } = image;
@@ -19,11 +20,15 @@ const { portada, coleccion } = image;
       contenedor="md:min-w-6/12 z-50"
     >
       {
-        coleccion.map((colection) => 
+        coleccion.map((colection) => (
           <FotoSlider>
-            <img src={colection.link} alt={colection.nombre} class="w-auto h-full" />
+            <img
+              src={colection.link}
+              alt={colection.nombre}
+              class="w-auto h-full"
+            />
           </FotoSlider>
-        )
+        ))
       }
     </Slider>
     <img
@@ -57,7 +62,7 @@ const { portada, coleccion } = image;
           tamaño="text-sm"
           color="bg-dorado hover:bg-amber-300 text-black"
         />
-        <Boton link={links.enlacePage} text="Ver pagina" tamaño="text-sm" />
+        <BotonSitio link={links.enlacePage} texto="Ver Pagina"/>
       </div>
     </section>
     <button
@@ -72,17 +77,4 @@ const { portada, coleccion } = image;
   </article>
 </section>
 
-<script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".modal").forEach((modalbento) => {
-      modalbento.addEventListener("click", (event) => {
-        if (event.target.closest(".cerrarModal")) {
-          modalbento.classList.toggle("hidden");
-        }
-        if (event.target === event.currentTarget) {
-          modalbento.classList.toggle("hidden");
-        }
-      });
-    });
-  });
-</script>
+

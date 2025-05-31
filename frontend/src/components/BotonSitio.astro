@@ -1,0 +1,13 @@
+---
+const { link, texto } = Astro.props;
+---
+
+<a
+  href={link}
+  target="_blank"
+  class="inline-flex  items-center active:scale-95 duration-300  px-3 py-1.5 bg-dorado text-black rounded-lg hover:-translate-y-2 hover:bg-amber-300 transition-colors text-sm"
+  aria-label="Ver proyecto de pagina de Jardineria"
+>
+  <i class="fas fa-external-link-alt mr-2"></i>
+  {texto}
+</a>
